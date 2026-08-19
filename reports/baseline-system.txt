@@ -1,0 +1,38 @@
+>>> hostnamectl
+
+Static hostname: acx
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: bf9ee721f990474892ffcb141ed83566
+         Boot ID: 7a9f89da17aa4c3381554335cea464d5
+  Virtualization: oracle
+Operating System: Ubuntu 24.04.3 LTS              
+          Kernel: Linux 6.8.0-71-generic
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Firmware Version: VirtualBox
+   Firmware Date: Fri 2006-12-01
+    Firmware Age: 19y 8month 2w 4d    
+
+
+>>> uame -a
+
+Linux acx 6.8.0-71-generic #71-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 16:52:38 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+
+>>> cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.3 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+
