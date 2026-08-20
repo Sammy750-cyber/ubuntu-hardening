@@ -1,0 +1,125 @@
+Mar 19 18:53:22 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Mar 19 18:53:22 acx sshd[1211]: Server listening on 0.0.0.0 port 22.
+Mar 19 18:53:22 acx sshd[1211]: Server listening on :: port 22.
+Mar 19 18:53:22 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Mar 19 18:53:22 acx sshd[1213]: Connection closed by 192.168.15.7 port 52818
+Mar 19 18:53:22 acx sshd[1214]: Connection closed by 192.168.15.7 port 54380
+Mar 19 18:54:08 acx sshd[1217]: Unable to negotiate with 192.168.15.7 port 38966: no matching host key type found. Their offer: ssh-dss [preauth]
+Mar 19 18:54:08 acx sshd[1219]: Unable to negotiate with 192.168.15.7 port 43852: no matching host key type found. Their offer: ssh-rsa [preauth]
+Mar 19 18:54:09 acx sshd[1223]: error: Protocol major versions differ: 2 vs. 1
+Mar 19 18:54:09 acx sshd[1223]: banner exchange: Connection from 192.168.15.7 port 52588: could not read protocol version
+Mar 19 18:54:09 acx sshd[1221]: Connection closed by 192.168.15.7 port 43868 [preauth]
+Mar 19 18:54:09 acx sshd[1224]: Unable to negotiate with 192.168.15.7 port 43884: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+Mar 19 18:54:09 acx sshd[1225]: Unable to negotiate with 192.168.15.7 port 52594: no matching host key type found. Their offer: ssh-dss [preauth]
+Mar 19 18:54:09 acx sshd[1229]: Unable to negotiate with 192.168.15.7 port 43894: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+Mar 19 18:54:09 acx sshd[1230]: Unable to negotiate with 192.168.15.7 port 52610: no matching host key type found. Their offer: ssh-rsa [preauth]
+Mar 19 18:54:10 acx sshd[1233]: Connection closed by 192.168.15.7 port 43908 [preauth]
+Mar 19 18:54:10 acx sshd[1234]: Connection closed by 192.168.15.7 port 52622 [preauth]
+Mar 19 18:54:10 acx sshd[1237]: Unable to negotiate with 192.168.15.7 port 52630: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+Mar 19 18:54:10 acx sshd[1239]: Unable to negotiate with 192.168.15.7 port 52636: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+Mar 19 18:54:11 acx sshd[1241]: Connection closed by 192.168.15.7 port 52640 [preauth]
+-- Boot 8c5699c93ebc45a5bf583f6c186f99b1 --
+Apr 04 12:53:09 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 04 12:53:09 acx sshd[1023]: Server listening on 0.0.0.0 port 22.
+Apr 04 12:53:09 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 04 12:53:09 acx sshd[1023]: Server listening on :: port 22.
+Apr 04 12:53:09 acx sshd[1025]: Connection closed by 192.168.15.20 port 52600
+Apr 04 12:53:10 acx sshd[1027]: error: Protocol major versions differ: 2 vs. 1
+Apr 04 12:53:10 acx sshd[1027]: banner exchange: Connection from 192.168.15.20 port 52620: could not read protocol version
+Apr 04 12:53:10 acx sshd[1026]: error: Protocol major versions differ: 2 vs. 1
+Apr 04 12:53:10 acx sshd[1026]: banner exchange: Connection from 192.168.15.20 port 52614: could not read protocol version
+Apr 04 12:53:10 acx sshd[1028]: Unable to negotiate with 192.168.15.20 port 52632: no matching host key type found. Their offer: ssh-dss [preauth]
+Apr 04 12:53:10 acx sshd[1030]: Unable to negotiate with 192.168.15.20 port 52642: no matching host key type found. Their offer: ssh-rsa [preauth]
+Apr 04 12:53:11 acx sshd[1032]: Connection closed by 192.168.15.20 port 52654 [preauth]
+Apr 04 12:53:11 acx sshd[1034]: Unable to negotiate with 192.168.15.20 port 52664: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+Apr 04 12:53:11 acx sshd[1036]: Unable to negotiate with 192.168.15.20 port 52676: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+Apr 04 12:53:11 acx sshd[1038]: Connection closed by 192.168.15.20 port 52692 [preauth]
+-- Boot acaf1bf1ca71485c8cb1d0f7a19af16a --
+Apr 25 16:03:34 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 25 16:03:34 acx sshd[996]: Server listening on 0.0.0.0 port 22.
+Apr 25 16:03:34 acx sshd[996]: Server listening on :: port 22.
+Apr 25 16:03:34 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 25 16:03:34 acx sshd[998]: Connection closed by 192.168.2.20 port 40638
+Apr 25 16:03:35 acx sshd[999]: error: Protocol major versions differ: 2 vs. 1
+Apr 25 16:03:35 acx sshd[1000]: error: Protocol major versions differ: 2 vs. 1
+Apr 25 16:03:35 acx sshd[1000]: banner exchange: Connection from 192.168.2.20 port 40660: could not read protocol version
+Apr 25 16:03:35 acx sshd[999]: banner exchange: Connection from 192.168.2.20 port 40650: could not read protocol version
+Apr 25 16:03:35 acx sshd[1001]: Unable to negotiate with 192.168.2.20 port 40666: no matching host key type found. Their offer: ssh-dss [preauth]
+Apr 25 16:03:35 acx sshd[1003]: Unable to negotiate with 192.168.2.20 port 40674: no matching host key type found. Their offer: ssh-rsa [preauth]
+Apr 25 16:03:35 acx sshd[1005]: Connection closed by 192.168.2.20 port 40682 [preauth]
+Apr 25 16:03:35 acx sshd[1007]: Unable to negotiate with 192.168.2.20 port 40692: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+Apr 25 16:03:35 acx sshd[1009]: Unable to negotiate with 192.168.2.20 port 40706: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+Apr 25 16:03:36 acx sshd[1011]: Connection closed by 192.168.2.20 port 40714 [preauth]
+-- Boot 57c27659c5f74f21938d1450f8ab683c --
+May 08 11:04:07 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+May 08 11:04:07 acx sshd[1053]: Server listening on 0.0.0.0 port 22.
+May 08 11:04:07 acx sshd[1053]: Server listening on :: port 22.
+May 08 11:04:07 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+May 08 11:04:08 acx sshd[1054]: Connection closed by 192.168.15.20 port 42940
+May 08 11:04:09 acx sshd[1056]: error: Protocol major versions differ: 2 vs. 1
+May 08 11:04:09 acx sshd[1056]: banner exchange: Connection from 192.168.15.20 port 42960: could not read protocol version
+May 08 11:04:09 acx sshd[1055]: error: Protocol major versions differ: 2 vs. 1
+May 08 11:04:09 acx sshd[1055]: banner exchange: Connection from 192.168.15.20 port 42954: could not read protocol version
+May 08 11:04:09 acx sshd[1057]: Unable to negotiate with 192.168.15.20 port 42976: no matching host key type found. Their offer: ssh-dss [preauth]
+May 08 11:04:09 acx sshd[1059]: Unable to negotiate with 192.168.15.20 port 42984: no matching host key type found. Their offer: ssh-rsa [preauth]
+May 08 11:04:09 acx sshd[1061]: Connection closed by 192.168.15.20 port 42998 [preauth]
+May 08 11:04:09 acx sshd[1063]: Unable to negotiate with 192.168.15.20 port 43002: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+May 08 11:04:09 acx sshd[1065]: Unable to negotiate with 192.168.15.20 port 43008: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+May 08 11:04:09 acx sshd[1067]: Connection closed by 192.168.15.20 port 43020 [preauth]
+May 08 12:59:35 acx sshd[1534]: Accepted password for acx from 192.168.15.20 port 59692 ssh2
+May 08 12:59:35 acx sshd[1534]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+-- Boot 24372e08935b476393cc6187aee3a0c9 --
+Jul 06 10:02:49 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Jul 06 10:02:49 acx sshd[1063]: Server listening on 0.0.0.0 port 22.
+Jul 06 10:02:49 acx sshd[1063]: Server listening on :: port 22.
+Jul 06 10:02:49 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Jul 06 10:03:01 acx sshd[1064]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.15.20  user=acx
+Jul 06 10:03:02 acx sshd[1064]: Failed password for acx from 192.168.15.20 port 51634 ssh2
+Jul 06 10:03:10 acx sshd[1064]: Accepted password for acx from 192.168.15.20 port 51634 ssh2
+Jul 06 10:03:10 acx sshd[1064]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+-- Boot 7a9f89da17aa4c3381554335cea464d5 --
+Aug 19 12:06:06 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Aug 19 12:06:06 acx sshd[2171]: Server listening on 0.0.0.0 port 22.
+Aug 19 12:06:06 acx sshd[2171]: Server listening on :: port 22.
+Aug 19 12:06:06 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Aug 19 12:08:31 acx sshd[2175]: Accepted password for acx from 192.168.15.20 port 35062 ssh2
+Aug 19 12:08:31 acx sshd[2175]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+Aug 19 12:24:23 acx sshd[2277]: Accepted password for acx from 192.168.15.20 port 49730 ssh2
+Aug 19 12:24:23 acx sshd[2277]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+Aug 19 13:13:37 acx sshd[2526]: Accepted password for acx from 192.168.15.20 port 37120 ssh2
+Aug 19 13:13:37 acx sshd[2526]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+Aug 19 14:08:03 acx sshd[3349]: Connection closed by 192.168.15.20 port 41018
+Aug 19 14:09:10 acx sshd[3350]: Connection closed by 192.168.15.20 port 42696
+Aug 19 14:56:29 acx systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Aug 19 14:56:29 acx sshd[2171]: Received signal 15; terminating.
+Aug 19 14:56:29 acx systemd[1]: ssh.service: Deactivated successfully.
+Aug 19 14:56:29 acx systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Aug 19 16:21:13 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Aug 19 16:21:13 acx sshd[32585]: Server listening on 0.0.0.0 port 22.
+Aug 19 16:21:13 acx sshd[32585]: Server listening on :: port 22.
+Aug 19 16:21:13 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Aug 19 16:21:13 acx sshd[32586]: Connection closed by authenticating user secadmin 192.168.15.20 port 38278 [preauth]
+Aug 19 16:21:13 acx sshd[32588]: Connection closed by authenticating user secadmin 192.168.15.20 port 38288 [preauth]
+Aug 19 16:21:22 acx sshd[32590]: Accepted password for secadmin from 192.168.15.20 port 38302 ssh2
+Aug 19 16:21:22 acx sshd[32590]: pam_unix(sshd:session): session opened for user secadmin(uid=1002) by secadmin(uid=0)
+Aug 19 16:23:11 acx sshd[32751]: Accepted publickey for secadmin from 192.168.15.20 port 45100 ssh2: ED25519 SHA256:rpOz2vi+uh7ZYz9o1HvuMM+8QhvYDeXi/rP8MYbyxy8
+Aug 19 16:23:11 acx sshd[32751]: pam_unix(sshd:session): session opened for user secadmin(uid=1002) by secadmin(uid=0)
+Aug 19 17:23:24 acx systemd[1]: Reloading ssh.service - OpenBSD Secure Shell server...
+Aug 19 17:23:24 acx systemd[1]: Reloaded ssh.service - OpenBSD Secure Shell server.
+Aug 19 17:23:24 acx sshd[32585]: Received SIGHUP; restarting.
+Aug 19 17:23:24 acx sshd[32585]: Server listening on 0.0.0.0 port 22.
+Aug 19 17:23:24 acx sshd[32585]: Server listening on :: port 22.
+Aug 19 17:23:58 acx sshd[32585]: Received signal 15; terminating.
+Aug 19 17:23:58 acx systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Aug 19 17:23:58 acx systemd[1]: ssh.service: Deactivated successfully.
+Aug 19 17:23:58 acx systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Aug 19 17:23:58 acx systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Aug 19 17:23:59 acx sshd[33031]: Server listening on 0.0.0.0 port 22.
+Aug 19 17:23:59 acx sshd[33031]: Server listening on :: port 22.
+Aug 19 17:23:59 acx systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Aug 19 17:27:49 acx sshd[33038]: Accepted publickey for secadmin from 192.168.15.20 port 58178 ssh2: ED25519 SHA256:rpOz2vi+uh7ZYz9o1HvuMM+8QhvYDeXi/rP8MYbyxy8
+Aug 19 17:27:49 acx sshd[33038]: pam_unix(sshd:session): session opened for user secadmin(uid=1002) by secadmin(uid=0)
+Aug 19 17:29:45 acx sshd[33152]: Accepted password for acx from 192.168.15.20 port 39348 ssh2
+Aug 19 17:29:45 acx sshd[33152]: pam_unix(sshd:session): session opened for user acx(uid=1000) by acx(uid=0)
+Aug 19 17:30:31 acx sshd[33226]: Accepted publickey for secadmin from 192.168.15.20 port 39282 ssh2: ED25519 SHA256:rpOz2vi+uh7ZYz9o1HvuMM+8QhvYDeXi/rP8MYbyxy8
+Aug 19 17:30:31 acx sshd[33226]: pam_unix(sshd:session): session opened for user secadmin(uid=1002) by secadmin(uid=0)

@@ -375,7 +375,7 @@ Also:
 ```bash
 ubuntu-security-status # this command is deprecated on new version of ubuntu
 sudo apt install ubuntu-pro-client
-pro security-status # use this instead
+pro security-status # used this instead
 ```
 
 Output:
@@ -973,6 +973,8 @@ Ubuntu explicitly identifies SYN cookies as a supported security feature.
 
 # PHASE 8 — AUTOMATIC SECURITY UPDATES
 
+Since the goal is to proritize automating repeated tasks, i thought it was a good idea to automate security updates too.
+
 Install:
 
 ```bash
@@ -984,6 +986,7 @@ Enable:
 ```bash
 sudo dpkg-reconfigure unattended-upgrades
 ```
+![alt text](Screenshots/auto_sec_update.png)
 
 Check:
 
@@ -1003,11 +1006,15 @@ Inspect logs:
 sudo ls -la /var/log/unattended-upgrades/
 ```
 
+![alt text](Screenshots/auto_sec_update_2.png)
+
 Ubuntu recommends configuration through drop-in files rather than modifying the original `50unattended-upgrades` file directly. 
 
 ---
 
 # PHASE 9 — PASSWORD POLICY
+
+ Setting up a password policy is necessary on an Ubuntu server—even if you primarily use SSH keys. Local accounts can still be used for sudo, console access, and services; weak passwords are a common attack vector. A strong password policy reduces the risk of brute-force, password guessing, and credential compromise.
 
 Install the password-quality module:
 
@@ -1023,10 +1030,34 @@ sudo nano /etc/security/pwquality.conf
 
 For the lab, establish a reasonable policy rather than an unnecessarily complex one.
 
-For example:
-
+My recommended secure settings:
 ```text
+# Minimum password length
 minlen = 12
+
+# Require at least one digit
+dcredit = -1
+
+# Require at least one uppercase letter
+ucredit = -1
+
+# Require at least one lowercase letter
+lcredit = -1
+
+# Require at least one special character
+ocredit = -1
+
+# Reject passwords with more than 3 repeated characters
+maxrepeat = 3
+
+# Reject passwords containing the username
+usercheck = 1
+
+# Number of retries before failing
+retry = 3
+
+# Enforce policy for root as well (optional but recommended)
+enforce_for_root
 ```
 
 The exact password policy should depend on organizational requirements.
@@ -1035,132 +1066,44 @@ Remember:
 
 > Strong password policy is useful, but SSH keys plus appropriate account controls are generally preferable for administrative SSH access.
 
----
-
-# PHASE 10 — FILE PERMISSIONS
-
-Inspect sensitive files:
-
-```bash
-ls -l /etc/passwd
-ls -l /etc/shadow
-ls -l /etc/group
-ls -l /etc/gshadow
-```
-
-Expected security properties include:
-
-```text
-/etc/passwd     readable
-/etc/shadow     restricted
-/etc/gshadow    restricted
-```
-
-Check:
-
-```bash
-stat /etc/shadow
-```
-
----
-
-## 27. SSH key permissions
-
-For `secadmin`:
-
-```bash
-sudo find /home/secadmin/.ssh -maxdepth 2 -type f -exec ls -l {} \;
-```
-
-Typical expectations:
-
-```text
-.ssh              700
-authorized_keys   600
-private key       600
-public key        644
-```
-
-Fix the directory:
-
-```bash
-sudo chmod 700 /home/secadmin/.ssh
-```
-
-Fix authorized keys:
-
-```bash
-sudo chmod 600 /home/secadmin/.ssh/authorized_keys
-```
-
-Correct ownership:
-
-```bash
-sudo chown -R secadmin:secadmin /home/secadmin/.ssh
-```
-
----
-
-# PHASE 11 — APPARMOR
-
-Check status:
-
-```bash
-sudo aa-status
-```
-
-Look for profiles in:
-
-```text
-enforce
-complain
-```
-
-An AppArmor profile in enforce mode restricts the application's behavior according to its policy.
-
-Don't disable AppArmor globally simply to make an application work.
-
-If an application is legitimately blocked, investigate its logs and policy.
 
 ---
 
 # PHASE 12 — AUDIT LOGGING
 
-Install auditd:
+I also enabled audit logging, this allows detailed loggin of whatever goes on in the server.
+
+I installed auditd:
 
 ```bash
 sudo apt install auditd audispd-plugins
 ```
 
-Enable:
+Enabled the service:
 
 ```bash
 sudo systemctl enable --now auditd
 ```
 
-Check:
+Checked to make sure it was working:
 
 ```bash
 sudo systemctl status auditd
 ```
 
-Search authentication-related events:
-
-```bash
-sudo ausearch -m USER_LOGIN
-```
-
-You can also inspect SSH logs:
+I also inspected SSH logs:
 
 ```bash
 sudo journalctl -u ssh
 ```
+SSH Logs: [Here](logs/ssh-audit-log.txt)
 
 And:
 
 ```bash
 sudo journalctl --since today
 ```
+Journalctl Logs [here](logs/audit-log.txt)
 
 ---
 
@@ -1188,11 +1131,11 @@ script can be found in [Hardening script](scripts/harden.sh)
 
 ---
 
-# 29. Why this isn't yet production-ready
+## 29. Why this isn't yet production-ready
 
 Notice something important.
 
-We intentionally haven't automated every possible hardening action.
+I intentionally haven't automated every possible hardening action.
 
 A production hardening script needs:
 
@@ -1224,6 +1167,91 @@ because:
 * another configuration directive might override it
 * you could lock yourself out
 
-That's exactly the kind of issue this project should teach you to avoid.
+That's exactly the kind of issue this project should taught me to avoid.
+
+---
+
+
+# PHASE 15 — VERIFICATION SCRIPT
+I also created a verification the main purpose for creating is to ensure this core question:
+
+
+> **Did we actually achieve the security baseline?**
+
+**Verification script:** [verify.sh](scripts/verify.sh)
+
+![alt text](Screenshots/verification_test.png)
+
+All the tests passed successfully
+
+---
+
+# PHASE 16 — BEFORE/AFTER VALIDATION
+
+I ran nmap scan again to check whether the security conkfiguration actually worked.
+
+From Kali:
+
+```bash
+nmap -sS -sV 192.168.15.6
+```
+
+I compared it with the before namp scan, the result was as expected, the server now has only one opened port and that is 22 for the intended SSH service nothing more.
+
+Before: [baseline-scan.txt](reports/baseline-nmap.txt)
+
+After: [Hardened-scan.txt](reports/hardened-nmap.txt)
+
+
+The important question isn't:
+
+> "Did Nmap show fewer ports?"
+
+The important question is:
+
+> **Are all remaining exposed services intentional?**
+
+Which is exactly what the last scan answered.
+
+
+---
+
+## 32. Firewall verification
+
+This part made me discover something interesting
+On Ubuntu:
+
+```bash
+sudo ufw status numbered
+```
+
+Then:
+
+```bash
+sudo ss -lntup
+```
+
+![result](Screenshots/firewall_verification.png)
+
+I compared the two results
+
+This taught me an important security concept:
+
+> **A service listening on a port and a port being reachable through the firewall are two different things.**
+
+For example:
+
+```text
+Application
+    |
+    v
+TCP 80 LISTEN
+    |
+    v
+UFW
+    |
+    X
+Blocked externally
+```
 
 ---
